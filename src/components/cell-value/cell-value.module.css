@@ -1,0 +1,55 @@
+.cell {
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.empty {
+  background-image: url('../../images/empty.jpg');
+}
+
+.mine {
+  background-image: url('../../images/open-mine.jpg');
+}
+
+.failed {
+  background-image: url('../../images/detected-mine.jpg');
+}
+
+.mistake {
+  background-image: url('../../images/fail-mine.jpg');
+}
+
+.one {
+  background-image: url('../../images/number-1.jpg');
+}
+
+.two {
+  background-image: url('../../images/number-2.jpg');
+}
+
+.three {
+  background-image: url('../../images/number-3.jpg');
+}
+
+.four {
+  background-image: url('../../images/number-4.jpg');
+}
+
+.five {
+  background-image: url('../../images/number-5.jpg');
+}
+
+.six {
+  background-image: url('../../images/number-6.jpg');
+}
+
+.seven {
+  background-image: url('../../images/number-7.jpg');
+}
+
+.eight {
+  background-image: url('../../images/number-8.jpg');
+}

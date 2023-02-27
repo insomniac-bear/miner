@@ -1,0 +1,10 @@
+.container {
+  margin: 0;
+  padding: 0;
+  border-width: 3px;
+  border-style: solid;
+  border-top-color: #808080;
+  border-right-color: #fff;
+  border-bottom-color: #fff;
+  border-left-color: #808080;
+}

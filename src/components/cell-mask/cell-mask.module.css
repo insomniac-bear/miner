@@ -1,0 +1,26 @@
+.cell {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: contain;
+  border: none;
+  background-color: inherit;
+}
+
+.cell:hover {
+  opacity: .6;
+}
+
+.fill {
+  background-image: url('../../images/closed.jpg');
+}
+
+.question {
+  background-image: url('../../images/close-question.jpg');
+}
+
+.flag {
+  background-image: url('../../images/flag.jpg');
+}
