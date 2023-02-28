@@ -3,9 +3,19 @@ import type { ICellMaskProps } from './cell-mask.props';
 import cn from 'classnames';
 import { useAppDispatch as useDispatch, useAppSelector as useSelector } from '../../services/hooks';
 import { MaskValues } from '../../types';
-import { setMaskTransparent, changeMaskValue, changeGameStatus, fillValues, changeActionStatus } from '../../services/board/board.slice';
+import {
+  setMaskTransparent,
+  changeMaskValue,
+  changeGameStatus,
+  fillValues,
+  changeActionStatus,
+} from '../../services/board/board.slice';
+import {
+  getGameStatus,
+  getSize,
+  selectMaskValues,
+} from '../../services/board/board.selectors';
 import styles from './cell-mask.module.css';
-import { getGameStatus, getSize, selectMaskValues } from '../../services/board/board.selectors';
 
 export const CellMask: FC<ICellMaskProps> = ({ x, y, value }) => {
   const dispatch = useDispatch();

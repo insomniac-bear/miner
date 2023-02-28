@@ -3,11 +3,12 @@ import { useEffect, useState } from 'react';
 import { useAppSelector as useSelector, useAppDispatch as useDispatch } from '../../services/hooks';
 import { getGameStatus } from '../../services/board/board.selectors';
 import { Number } from '../number/number';
+import { changeGameStatus, looseGame } from '../../services/board/board.slice';
+import { TIMER } from '../../settings';
 import styles from './timer.module.css';
-import { changeGameStatus } from '../../services/board/board.slice';
 
 export const Timer: FC = () => {
-  const [timer, setTimer] = useState<number>(40 * 60);
+  const [timer, setTimer] = useState<number>(TIMER);
   const dispatch = useDispatch();
   const gameStatus = useSelector(getGameStatus);
 
@@ -24,11 +25,12 @@ export const Timer: FC = () => {
     }
 
     if (gameStatus === 'idle') {
-      setTimer(40 * 60);
+      setTimer(TIMER);
     }
 
     if (timer === 0) {
       dispatch(changeGameStatus('loose'));
+      dispatch(looseGame());
 
       if (timerID) {
         clearInterval(timerID);
@@ -37,7 +39,7 @@ export const Timer: FC = () => {
 
     return () => clearInterval(timerID);
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [ gameStatus ]);
+  }, [ gameStatus, timer ]);
 
   const getMinutes = (time: number) => {
     const minutes = Math.floor(time / 60);

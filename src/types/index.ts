@@ -5,7 +5,6 @@ import { TGameStatus, TActionStatus } from './game-status';
 export {
   MaskValues,
   CellValues,
-
 };
 
 export type {
