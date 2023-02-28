@@ -1,0 +1,12 @@
+.container {
+  display: grid;
+  gap: 6px;
+  padding: 6px;
+  background-color: var(--bg);
+  border-width: var(--border-width);
+  border-style: solid;
+  border-top-color: var(--light);
+  border-right-color: var(--shadow);
+  border-bottom-color: var(--shadow);
+  border-left-color: var(--light);
+}

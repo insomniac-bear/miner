@@ -1,6 +1,6 @@
 import { CellValues } from "../types";
 
-export const createFields = (size: number, mineCount: number): CellValues[] => {
+export const createFields = (size: number, mineCount: number, clickX: number, clickY: number): CellValues[] => {
   const field: CellValues[] = new Array(size * size).fill(CellValues.empty);
 
   const inc = (x: number, y: number) => {
@@ -16,7 +16,7 @@ export const createFields = (size: number, mineCount: number): CellValues[] => {
     const x = Math.floor(Math.random() * size);
     const y = Math.floor(Math.random() * size);
 
-    if (field[y * size + x] !== CellValues.mine) {
+    if (field[y * size + x] !== CellValues.mine && x !== clickX && y !== clickY) {
       field[y * size + x] = CellValues.mine;
 
       inc(x + 1, y);

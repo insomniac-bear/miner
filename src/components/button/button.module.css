@@ -1,0 +1,28 @@
+.btn {
+  display: block;
+  margin: 0 0 0 13px;
+  padding: 0;
+  width: 26px;
+  height: 26px;
+  border: none;
+  background-color: inherit;
+  background-image: url('../../images/smile.jpg');
+  background-size: contain;
+  background-position: center;
+}
+
+.pressed {
+  background-image: url('../../images/pressed-smile.jpg');
+}
+
+.loose {
+  background-image: url('../../images/looser.jpg');
+}
+
+.win {
+  background-image: url('../../images/winner.jpg');
+}
+
+.panic {
+  background-image: url('../../images/panic.jpg');
+}
