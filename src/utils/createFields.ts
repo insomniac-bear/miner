@@ -12,7 +12,7 @@ export const createFields = (size: number, mineCount: number, clickX: number, cl
   };
 
   let i = 0;
-  while (i <= mineCount) {
+  while (i < mineCount) {
     const x = Math.floor(Math.random() * size);
     const y = Math.floor(Math.random() * size);
 
@@ -27,9 +27,9 @@ export const createFields = (size: number, mineCount: number, clickX: number, cl
       inc(x + 1, y - 1);
       inc(x - 1, y + 1);
       inc(x + 1, y + 1);
+      i += 1;
     }
 
-    i += 1;
   }
 
   return field;

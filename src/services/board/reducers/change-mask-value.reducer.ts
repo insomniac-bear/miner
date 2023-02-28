@@ -17,7 +17,16 @@ export const changeMaskValueReducer = (state: IBoardState, action: PayloadAction
     state.mineCount = state.mineCount === 0 ? 0 : state.mineCount - 1;
   }
 
-  if (state.maskValues[idx] === MaskValues.question) {
+  if (state.maskValues[idx] === MaskValues.question && state.values[idx] === CellValues.mine) {
     state.mineCount = state.mineCount === 40 ? 40 : state.mineCount + 1;
+  }
+
+  if (state.mineCount === 0) {
+    state.gameStatus = 'win';
+    state.maskValues.forEach((_, i) => {
+      if (state.maskValues[i] !== MaskValues.flag && state.maskValues[i] !== MaskValues.transparent) {
+        state.maskValues[i] = MaskValues.transparent;
+      }
+    })
   }
 };

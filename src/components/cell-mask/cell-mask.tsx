@@ -1,7 +1,10 @@
 import type { FC, MouseEvent } from 'react';
 import type { ICellMaskProps } from './cell-mask.props';
 import cn from 'classnames';
-import { useAppDispatch as useDispatch, useAppSelector as useSelector } from '../../services/hooks';
+import {
+  useAppDispatch as useDispatch,
+  useAppSelector as useSelector,
+} from '../../services/hooks';
 import { MaskValues } from '../../types';
 import {
   setMaskTransparent,
@@ -13,14 +16,14 @@ import {
 import {
   getGameStatus,
   getSize,
-  selectMaskValues,
+  getMaskValues,
 } from '../../services/board/board.selectors';
 import styles from './cell-mask.module.css';
 
 export const CellMask: FC<ICellMaskProps> = ({ x, y, value }) => {
   const dispatch = useDispatch();
   const gameStatus = useSelector(getGameStatus);
-  const maskValues = useSelector(selectMaskValues);
+  const maskValues = useSelector(getMaskValues);
   const size = useSelector(getSize);
 
   const onMaskClick = () => {
